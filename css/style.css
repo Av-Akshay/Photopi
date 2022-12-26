@@ -14,7 +14,10 @@ header {
     height: 90vh;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assests/banner1.jpg);
     background-size: cover;
+    position: relative;
 }
+
+/*-------------------- navbar------------------------------- */
 
 nav {
     width: 100%;
@@ -25,9 +28,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 2;
+    overflow: hidden;
 }
 
 .logo {
@@ -37,7 +38,9 @@ nav {
 .logo span {
     color: #e74c3c;
 }
-
+.menu{
+    overflow: hidden;
+}
 .menu a {
     text-decoration: none;
     font-size: 1.6rem;
@@ -58,12 +61,26 @@ nav {
     color: black;
 }
 
+.menu .fa-times{
+    /* position: absolute;
+    z-index: 2;
+    color: white;
+    right: 5rem; */
+    font-size: 3rem;
+    display: none;
+    /* right: ; */
+}
+
 .icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     display: flex;
     gap: 5rem;
     align-items: center;
 }
+.icon .fa-bars{
+    display: none;
+}
+
 
 .icon i {
     transition: all 0.2s linear;
@@ -87,6 +104,8 @@ nav {
     background-color: #e74c3c;
     color: white;
 }
+
+/* ------------------------first section-------------------------- */
 
 .h-text {
     position: absolute;
@@ -127,22 +146,28 @@ nav {
     border-radius: 1rem;
 }
 
+/* <!------------------------ second section ------------------------> */
+
 .filter-gallery {
 
     padding: 6rem 0rem;
 }
-
-.portfolio-menu {
-    width: 100%;
-    text-align: center;
-    width: 70%;
+.portfolio-menu{
+    width: 80%;
     margin: auto;
-    padding: 6rem 0rem;
+}
+
+.portfolio-menu ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: 5rem auto 5rem auto;
 }
 
 .portfolio-menu ul li {
-    display: inline-block;
-    padding: 1rem 5rem;
+    padding: 1rem 3rem;
     font-weight: bold;
     font-size: 1.6rem;
     transition: all 0.2s ease;
@@ -181,6 +206,8 @@ nav {
     transform: scale(1.02);
     box-shadow: 0rem 0rem 1rem 0.2rem gray;
 }
+
+/*-------------------------------third section -------------------------------------*/
 
 .member-info {
     width: 100%;
@@ -234,10 +261,12 @@ nav {
     transform: scale(1.05);
 }
 
+/*------------------------------ footer---------------------------- */
+
 footer {
     background: black;
     width: 100%;
-    height: 60vh;
+    height: 50rem;
     overflow: hidden;
     margin-top: 5rem;
 }
@@ -288,11 +317,9 @@ footer {
 
 .f-contact {
     width: 80%;
-    /* margin: auto; */
     color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 5rem auto 5rem auto;
     border-bottom: 0.1rem solid white;
     padding-bottom: 5rem;
@@ -310,7 +337,7 @@ footer {
 
 .info i {
     font-size: 2rem;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     transition: all 0.2s linear;
     cursor: pointer;
 }
@@ -332,4 +359,85 @@ ul li a {
     /* font-size: 1.6rem; */
     color: white;
     cursor: pointer;
+}
+
+
+/*///////////////////// media quary section---------------- */
+@media(max-width:1250px){
+    html{
+        font-size: 56.25%;
+    }
+}
+@media(max-width:900px){
+    html{
+        font-size: 50%;
+    }
+    header{
+        overflow: hidden;
+    }
+    nav .menu a{
+      display: block;
+      text-align: center;
+      padding: 2rem;
+    }
+    nav .menu{
+       position: absolute;
+       top: 0;
+       right: 0;
+       background: #e74c3c;
+       height: 90vh;
+       width: 40%;
+       /* z-index: 1; */
+       padding-top: 5rem;
+       right: -40%;
+       /* overflow: hidden; */
+    }
+
+    .menu a:first-child {
+        color: black;
+        border: none;
+    }
+    .menu a:first-child:hover{
+        color: white;
+    }
+    .menu a:hover{
+        color: white;
+    }
+    .nav-icons {
+       display: block;
+    }
+    .menu .fa-times{
+        position: absolute;
+        z-index: 2;
+        color: white;
+        right: 5rem;
+        font-size: 2rem;
+        display: block;
+    }
+    .icon .fa-bars{
+        display: block;
+    }
+    .newsletter {
+        padding: 2rem 2rem;
+        margin: 2rem auto 2rem auto;  
+    }
+    .newsletter input {
+        font-size: 1.6rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .newsletter button {
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+    }
+}
+@media(max-width:650px){
+    html{
+        font-size: 43.75%;
+    }
+}
+@media(max-width:350px){
+    html{
+        font-size: 37.5%;
+    }
 }
